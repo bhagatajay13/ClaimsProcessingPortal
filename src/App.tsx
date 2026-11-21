@@ -3,6 +3,8 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import ClaimsDashboard from './pages/ClaimsDashboard';
 import ClaimDetails from './pages/ClaimDetails';
+import DocumentWorkspace from './pages/DocumentWorkspace';
+import Dashboard from './pages/Dashboard';
 
 function AppLayout() {
   return (
@@ -12,9 +14,10 @@ function AppLayout() {
         <Header />
         <main className="p-6">
           <Routes>
-            <Route path="/" element={<ClaimsDashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/claims" element={<ClaimsDashboard />} />
             <Route path="/claims/:claimId" element={<ClaimDetails />} />
+            <Route path="/claims/:claimId/document/:documentId" element={<DocumentWorkspace />} />
           </Routes>
         </main>
       </div>
